@@ -671,31 +671,29 @@
           this.logger = logger;
           this.allOrganisations = allOrganisations;
           this.urlApiIatiDataset = window.__env.apiDataworkBench + '/iati-datasets';
-          this.urlApiIatiFile = window.__env.apiDataworkBench + '/iati-files'; // /pvt/publisher/{publisher_id}/documents
-
-          this.urlApiOrganisationVS = window.__env.validatorServicesUrl + '/pvt/publisher';
+          this.urlApiIatiFile = window.__env.apiDataworkBench + '/iati-files';
+          this.urlApiOrganisationVS = window.__env.validatorServicesUrl + '/pvt/publishers';
+          this.urlApiDocumentVS = window.__env.validatorServicesUrl + '/pvt/documents';
         }
 
         _createClass(OrganisationService, [{
-          key: "getOrganisation",
-          value: function getOrganisation(name) {
+          key: "getOrganisationAndDocuments",
+          value: function getOrganisationAndDocuments(name) {
             var _this2 = this;
 
-            return this.allOrganisations.getOrganisations().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (data) {
-              var selectedOrg = data.find(function (org) {
-                return org.name === name;
-              });
+            return this.getOrganisationByName(name).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (data) {
+              var org = data[0];
               var workspaces = [{
                 slug: 'public',
-                'owner-slug': selectedOrg.name,
+                'owner-slug': name,
                 title: 'Public data',
                 description: 'IATI files published in the IATI Registry',
-                id: selectedOrg.iati_id,
-                'iati-publisherId': selectedOrg.iati_id,
+                id: org.iati_id,
+                'iati-publisherId': org.iati_id,
                 versions: null
               }];
-              return _this2.getOrganisationDocuments(selectedOrg.org_id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (documents) {
-                return Object.assign(Object.assign({}, selectedOrg), {
+              return _this2.getOrganisationDocuments(org.org_id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (documents) {
+                return Object.assign(Object.assign({}, org), {
                   workspaces: workspaces,
                   documents: documents
                 });
@@ -703,68 +701,101 @@
             }));
           }
         }, {
+          key: "getOrganisationByName",
+          value: function getOrganisationByName(name) {
+            var _this3 = this;
+
+            var url = this.urlApiOrganisationVS + '/' + name + '?lookupKey=name';
+            this.log(url);
+            return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (_) {
+              return _this3.log("fetched organisation");
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getOrganisationByName', undefined)));
+          }
+        }, {
+          key: "getOrganisationById",
+          value: function getOrganisationById(id) {
+            var _this4 = this;
+
+            var url = this.urlApiOrganisationVS + '/' + id + '?lookupKey=id';
+            this.log(url);
+            return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (_) {
+              return _this4.log("fetched organisation");
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getOrganisationById', undefined)));
+          }
+        }, {
+          key: "getDocument",
+          value: function getDocument(documentId) {
+            var _this5 = this;
+
+            var url = this.urlApiDocumentVS + '/' + documentId;
+            this.log(url);
+            return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (_) {
+              return _this5.log("fetched document");
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getDocumentInfo', undefined)));
+          }
+        }, {
           key: "getOrganisationDocuments",
           value: function getOrganisationDocuments(organisationId) {
-            var _this3 = this;
+            var _this6 = this;
 
             var url = this.urlApiOrganisationVS + '/' + organisationId + '/documents';
             this.log(url);
             return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (_) {
-              return _this3.log("fetched documents");
+              return _this6.log("fetched documents");
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getOrganisationDocuments', [])));
           }
         }, {
           key: "getIatiDataset",
           value: function getIatiDataset(md5) {
-            var _this4 = this;
+            var _this7 = this;
 
             var url = this.urlApiIatiDataset + '/?filter[where][md5]=' + md5;
             this.log(url);
             return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (_) {
-              return _this4.log("fetched iati dataset");
+              return _this7.log("fetched iati dataset");
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getIatiDataset', undefined)));
           }
         }, {
           key: "getIatiDatasetById",
           value: function getIatiDatasetById(id) {
-            var _this5 = this;
+            var _this8 = this;
 
             var url = this.urlApiIatiDataset + '/?filter[where][id]=' + id;
             this.log(url);
             return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (_) {
-              return _this5.log("fetched iati dataset");
+              return _this8.log("fetched iati dataset");
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getIatiDataset', undefined)));
           }
         }, {
           key: "getNextInQueue",
           value: function getNextInQueue() {
-            var _this6 = this;
+            var _this9 = this;
 
             var url = window.__env.apiDataworkBench + '/queue/next';
             return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (_) {
-              return _this6.log("fetched iati dataset");
+              return _this9.log("fetched iati dataset");
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getIatiDataset', undefined)));
           }
         }, {
           key: "getQueueLength",
           value: function getQueueLength() {
-            var _this7 = this;
+            var _this10 = this;
 
             var url = window.__env.apiDataworkBench + '/queue/length';
             return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (_) {
-              return _this7.log("fetched queue length");
+              return _this10.log("fetched queue length");
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getQueueLength', undefined)));
           }
         }, {
           key: "getIatiFile",
           value: function getIatiFile(md5) {
-            var _this8 = this;
+            var _this11 = this;
 
             var url = this.urlApiIatiFile + '/file/json/' + md5 + '.json'; //   /iati-files/{container}/download/{file}
 
             this.log(url);
             return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (_) {
-              return _this8.log("fetched iati file");
+              return _this11.log("fetched iati file");
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getIatiFile', undefined)));
           }
         }, {
@@ -812,13 +843,13 @@
         }, {
           key: "handleError",
           value: function handleError() {
-            var _this9 = this;
+            var _this12 = this;
 
             var operation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'operation';
             var result = arguments.length > 1 ? arguments[1] : undefined;
             return function (error) {
               // TODO: send the error to remote logging
-              _this9.logger.error(error); // console.error(error); // log to console instead
+              _this12.logger.error(error); // console.error(error); // log to console instead
               // TODO: better job of transforming error for user consumption
               // this.log(`${operation} failed: ${error.message}`);
               // Let the app keep running by returning an empty result.
@@ -1547,15 +1578,15 @@
         var _super2 = _createSuper(LogLocalStorage);
 
         function LogLocalStorage() {
-          var _this10;
+          var _this13;
 
           _classCallCheck(this, LogLocalStorage);
 
           // Must call super() from derived classes
-          _this10 = _super2.call(this); // Set location
+          _this13 = _super2.call(this); // Set location
 
-          _this10.location = 'logging';
-          return _this10;
+          _this13.location = 'logging';
+          return _this13;
         } // Append log entry to local storage
 
 
@@ -1602,16 +1633,16 @@
         var _super3 = _createSuper(LogWebApi);
 
         function LogWebApi(http) {
-          var _this11;
+          var _this14;
 
           _classCallCheck(this, LogWebApi);
 
           // Must call super() from derived classes
-          _this11 = _super3.call(this);
-          _this11.http = http; // Set location
+          _this14 = _super3.call(this);
+          _this14.http = http; // Set location
 
-          _this11.location = '/api/logging';
-          return _this11;
+          _this14.location = '/api/logging';
+          return _this14;
         } // **************
         // Public Methods
         // **************
@@ -1875,7 +1906,13 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _organisations_shared_organisations_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! ./organisations/shared/organisations.service */
+      "iSyK");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
 
@@ -1883,15 +1920,15 @@
         _classCallCheck(this, AppModule);
       };
 
-      AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineNgModule"]({
+      AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineNgModule"]({
         type: AppModule,
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
       });
-      AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineInjector"]({
+      AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineInjector"]({
         factory: function AppModule_Factory(t) {
           return new (t || AppModule)();
         },
-        providers: [_organisation_shared_organisation_service__WEBPACK_IMPORTED_MODULE_12__["OrganisationService"]],
+        providers: [_organisation_shared_organisation_service__WEBPACK_IMPORTED_MODULE_12__["OrganisationService"], _organisations_shared_organisations_service__WEBPACK_IMPORTED_MODULE_13__["OrganisationsService"]],
         imports: [[angular_gtag__WEBPACK_IMPORTED_MODULE_11__["GtagModule"].forRoot({
           trackingId: 'UA-110230511-9',
           trackPageviews: true
@@ -1899,7 +1936,7 @@
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵsetNgModuleScope"](AppModule, {
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵsetNgModuleScope"](AppModule, {
           declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"], _views_data_quality_feedback_about_about_component__WEBPACK_IMPORTED_MODULE_10__["AboutComponent"], _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_9__["PageNotFoundComponent"]],
           imports: [angular_gtag__WEBPACK_IMPORTED_MODULE_11__["GtagModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"], _core_core_module__WEBPACK_IMPORTED_MODULE_4__["CoreModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"], _layout_layout_module__WEBPACK_IMPORTED_MODULE_8__["LayoutModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]],
           exports: [_core_core_module__WEBPACK_IMPORTED_MODULE_4__["CoreModule"]]
@@ -1964,10 +2001,10 @@
         _createClass(LoaderComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this12 = this;
+            var _this15 = this;
 
             this.subscription = this.loaderService.loaderState.subscribe(function (state) {
-              _this12.show = state.show;
+              _this15.show = state.show;
             });
           }
         }, {
@@ -2593,11 +2630,11 @@
         _createClass(OrganisationsService, [{
           key: "getOrganisations",
           value: function getOrganisations() {
-            var _this13 = this;
+            var _this16 = this;
 
             var url = this.organisationsUrl + '/pvt/publishers';
             return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (_) {
-              return _this13.log("fetched organisations");
+              return _this16.log("fetched organisations");
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('getOrganisations', [])));
           }
         }, {
@@ -2618,13 +2655,13 @@
         }, {
           key: "handleError",
           value: function handleError() {
-            var _this14 = this;
+            var _this17 = this;
 
             var operation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'operation';
             var result = arguments.length > 1 ? arguments[1] : undefined;
             return function (error) {
               // TODO: send the error to remote logging
-              _this14.logger.error(error); // console.error(error); // log to console instead
+              _this17.logger.error(error); // console.error(error); // log to console instead
               // TODO: better job of transforming error for user consumption
               // this.log(`${operation} failed: ${error.message}`);
               // Let the app keep running by returning an empty result.

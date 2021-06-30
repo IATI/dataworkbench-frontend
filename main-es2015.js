@@ -288,25 +288,43 @@ class OrganisationService {
         this.allOrganisations = allOrganisations;
         this.urlApiIatiDataset = window.__env.apiDataworkBench + '/iati-datasets';
         this.urlApiIatiFile = window.__env.apiDataworkBench + '/iati-files';
-        // /pvt/publisher/{publisher_id}/documents
-        this.urlApiOrganisationVS = window.__env.validatorServicesUrl + '/pvt/publisher';
+        this.urlApiOrganisationVS = window.__env.validatorServicesUrl + '/pvt/publishers';
+        this.urlApiDocumentVS = window.__env.validatorServicesUrl + '/pvt/documents';
     }
-    getOrganisation(name) {
-        return this.allOrganisations.getOrganisations()
+    getOrganisationAndDocuments(name) {
+        return this.getOrganisationByName(name)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(data => {
-            const selectedOrg = data.find((org) => org.name === name);
+            const org = data[0];
             const workspaces = [{
                     slug: 'public',
-                    'owner-slug': selectedOrg.name,
+                    'owner-slug': name,
                     title: 'Public data',
                     description: 'IATI files published in the IATI Registry',
-                    id: selectedOrg.iati_id,
-                    'iati-publisherId': selectedOrg.iati_id,
+                    id: org.iati_id,
+                    'iati-publisherId': org.iati_id,
                     versions: null,
                 }];
-            return this.getOrganisationDocuments(selectedOrg.org_id)
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((documents) => (Object.assign(Object.assign({}, selectedOrg), { workspaces, documents }))));
+            return this.getOrganisationDocuments(org.org_id)
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((documents) => (Object.assign(Object.assign({}, org), { workspaces, documents }))));
         }));
+    }
+    getOrganisationByName(name) {
+        const url = this.urlApiOrganisationVS + '/' + name + '?lookupKey=name';
+        this.log(url);
+        return this.http.get(url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(_ => this.log(`fetched organisation`)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getOrganisationByName', undefined)));
+    }
+    getOrganisationById(id) {
+        const url = this.urlApiOrganisationVS + '/' + id + '?lookupKey=id';
+        this.log(url);
+        return this.http.get(url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(_ => this.log(`fetched organisation`)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getOrganisationById', undefined)));
+    }
+    getDocument(documentId) {
+        const url = this.urlApiDocumentVS + '/' + documentId;
+        this.log(url);
+        return this.http.get(url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(_ => this.log(`fetched document`)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(this.handleError('getDocumentInfo', undefined)));
     }
     getOrganisationDocuments(organisationId) {
         const url = this.urlApiOrganisationVS + '/' + organisationId + '/documents';
@@ -920,7 +938,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_data_quality_feedback_about_about_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/data-quality-feedback/about/about.component */ "goxy");
 /* harmony import */ var angular_gtag__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! angular-gtag */ "e/9f");
 /* harmony import */ var _organisation_shared_organisation_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./organisation/shared/organisation.service */ "Gl80");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _organisations_shared_organisations_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./organisations/shared/organisations.service */ "iSyK");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
 
 
 
@@ -938,9 +958,9 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppModule {
 }
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [
-        _organisation_shared_organisation_service__WEBPACK_IMPORTED_MODULE_12__["OrganisationService"]
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [
+        _organisation_shared_organisation_service__WEBPACK_IMPORTED_MODULE_12__["OrganisationService"], _organisations_shared_organisations_service__WEBPACK_IMPORTED_MODULE_13__["OrganisationsService"]
     ], imports: [[
             angular_gtag__WEBPACK_IMPORTED_MODULE_11__["GtagModule"].forRoot({ trackingId: 'UA-110230511-9', trackPageviews: true }),
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -951,7 +971,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineInjecto
             _layout_layout_module__WEBPACK_IMPORTED_MODULE_8__["LayoutModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
         ], _core_core_module__WEBPACK_IMPORTED_MODULE_4__["CoreModule"]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"],
         _views_data_quality_feedback_about_about_component__WEBPACK_IMPORTED_MODULE_10__["AboutComponent"],
         _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_9__["PageNotFoundComponent"]], imports: [angular_gtag__WEBPACK_IMPORTED_MODULE_11__["GtagModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
