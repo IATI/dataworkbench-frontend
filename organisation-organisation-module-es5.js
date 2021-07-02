@@ -150,17 +150,17 @@
                 valid = document.valid;
 
             if (validation === null) {
-              return 3;
+              return 2;
             } else if (valid === true && error === 0 && warning === 0) {
-              return 4;
-            } else if (valid === true && error === 0) {
               return 5;
+            } else if (valid === true && error === 0) {
+              return 4;
             } else if (valid === true) {
-              return 1;
+              return 3;
             } else if (valid === false) {
-              return 9;
-            } else {
               return 1;
+            } else {
+              return 2;
             }
           };
         }
@@ -169,7 +169,7 @@
           key: "ngOnInit",
           value: function ngOnInit() {
             // Sort the documents based on severity
-            this.documents = this.documents.sort(this.compareSeverity);
+            this.documents.sort(this.compareSeverity);
           }
         }]);
 
