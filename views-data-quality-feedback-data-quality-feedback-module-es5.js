@@ -1,4 +1,16 @@
 (function () {
+  function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+  function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+  function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+  function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -34,37 +46,19 @@
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _shared_data_quality_feedback_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./../shared/data-quality-feedback.service */
+      "pqb9");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/common */
       "ofXK");
 
-      function FeedbackItemComponent_li_4_span_5_Template(rf, ctx) {
+      function FeedbackItemComponent_li_4_li_6_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "(see guidance)");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          var ruleset_r4 = ctx.$implicit;
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", ruleset_r4.src, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", ruleset_r4.src == null);
-        }
-      }
-
-      function FeedbackItemComponent_li_4_li_7_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 8);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -72,11 +66,11 @@
         }
 
         if (rf & 2) {
-          var con_r5 = ctx.$implicit;
+          var con_r3 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](con_r5.text);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](con_r3.text);
         }
       }
 
@@ -94,13 +88,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, FeedbackItemComponent_li_4_span_5_Template, 3, 2, "span", 6);
-
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "ul", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "ul", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, FeedbackItemComponent_li_4_li_7_Template, 2, 1, "li", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, FeedbackItemComponent_li_4_li_6_Template, 2, 1, "li", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -116,15 +108,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](mes_r1.text);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](mes_r1.message);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mes_r1.id, " ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", mes_r1.rulesets);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -137,14 +125,16 @@
       }
 
       var FeedbackItemComponent = /*#__PURE__*/function () {
-        function FeedbackItemComponent() {
+        function FeedbackItemComponent(dataQualityFeedbackService) {
           var _this = this;
 
           _classCallCheck(this, FeedbackItemComponent);
 
+          this.dataQualityFeedbackService = dataQualityFeedbackService;
+
           this.sortData = function () {
             // Sort the messages based on severity
-            _this.feedback.messages.sort(_this.compareSeverity);
+            _this.feedback.errors.sort(_this.compareSeverity);
           };
 
           this.compareSeverity = function (a, b) {
@@ -152,25 +142,15 @@
           };
 
           this.getSeverity = function (message) {
-            if (message.rulesets.some(function (x) {
-              return x.severity === 'critical';
-            })) {
+            if (message.severity === 'critical') {
               return 1;
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'danger';
-            })) {
+            } else if (message.severity === 'error') {
               return 2;
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'warning';
-            })) {
+            } else if (message.severity === 'warning') {
               return 2;
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'info';
-            })) {
+            } else if (message.severity === 'info') {
               return 3;
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'success';
-            })) {
+            } else if (message.severity === 'success') {
               return 4;
             } else {
               return 9;
@@ -186,29 +166,24 @@
         }, {
           key: "getfeedbackColor",
           value: function getfeedbackColor(message) {
-            if (message.rulesets.some(function (x) {
-              return x.severity === 'danger';
-            })) {
+            if (message.severity === 'error') {
               return 'error';
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'critical';
-            })) {
+            } else if (message.severity === 'critical') {
               return 'critical';
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'warning';
-            })) {
+            } else if (message.severity === 'warning') {
               return 'warning';
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'info';
-            })) {
+            } else if (message.severity === 'info') {
               return 'improvement';
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'success';
-            })) {
+            } else if (message.severity === 'success') {
               return 'notification';
             } else {
               return 'other';
             }
+          }
+        }, {
+          key: "getCategoryLabel",
+          value: function getCategoryLabel(category) {
+            return this.dataQualityFeedbackService.getCategoryLabel(category);
           }
         }]);
 
@@ -216,7 +191,7 @@
       }();
 
       FeedbackItemComponent.ɵfac = function FeedbackItemComponent_Factory(t) {
-        return new (t || FeedbackItemComponent)();
+        return new (t || FeedbackItemComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_data_quality_feedback_service__WEBPACK_IMPORTED_MODULE_1__["DataQualityFeedbackService"]));
       };
 
       FeedbackItemComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -227,7 +202,7 @@
         },
         decls: 5,
         vars: 2,
-        consts: [[1, "feedback"], [1, "category-label"], [1, "feedback-list"], [3, "class", 4, "ngFor", "ngForOf"], [1, "message-text"], [1, "message-id", "d-inline", "float-right"], [4, "ngFor", "ngForOf"], [3, "hidden"], ["class", "context", 4, "ngFor", "ngForOf"], ["target", "_blank", "title", "Open guidance in a new window", 3, "hidden", "href"], [1, "context"]],
+        consts: [[1, "feedback"], [1, "category-label"], [1, "feedback-list"], [3, "class", 4, "ngFor", "ngForOf"], [1, "message-text"], [1, "message-id", "d-inline", "float-right"], [3, "hidden"], ["class", "context", 4, "ngFor", "ngForOf"], [1, "context"]],
         template: function FeedbackItemComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -240,7 +215,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "ul", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, FeedbackItemComponent_li_4_Template, 8, 8, "li", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, FeedbackItemComponent_li_4_Template, 7, 7, "li", 3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -250,14 +225,14 @@
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.feedback.label);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.getCategoryLabel(ctx.feedback.category));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.feedback.messages);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.feedback.errors);
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgForOf"]],
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"]],
         styles: ["@font-face {\n  font-family: \"chalet-london-sixty\";\n  src: url(\"https://use.typekit.net/af/b20ed4/0000000000000000000154d5/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/b20ed4/0000000000000000000154d5/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/b20ed4/0000000000000000000154d5/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3\") format(\"opentype\");\n  font-style: normal;\n  font-weight: 400;\n  font-display: auto;\n}\n@font-face {\n  font-family: \"pragmatica\";\n  src: url(\"https://use.typekit.net/af/983872/0000000000000000000100cc/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/983872/0000000000000000000100cc/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/983872/0000000000000000000100cc/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3\") format(\"opentype\");\n  font-style: normal;\n  font-weight: 700;\n  font-display: auto;\n}\n@font-face {\n  font-family: \"Roboto\";\n  src: local(\"Roboto Regular\"), local(\"Roboto-Regular\"), url(\"//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2\") format(\"woff2\");\n  font-style: normal;\n  font-weight: 400;\n  unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n@font-face {\n  font-family: \"Roboto\";\n  src: local(\"Roboto Medium\"), local(\"Roboto-Medium\"), url(\"//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2\") format(\"woff2\");\n  font-style: normal;\n  font-weight: 500;\n  unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n.category-label[_ngcontent-%COMP%] {\n  font-size: 1.2rem;\n  font-weight: 700;\n}\n.feedback[_ngcontent-%COMP%]    > ul[_ngcontent-%COMP%] {\n  padding: 0;\n}\n.message[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 500;\n  padding: 12px;\n  color: black;\n  margin-bottom: 4px;\n  background-color: #ecf0f1;\n}\n.message-text[_ngcontent-%COMP%] {\n  white-space: pre-line;\n}\n.feedback-list[_ngcontent-%COMP%] {\n  list-style-type: none;\n}\n.critical[_ngcontent-%COMP%] {\n  border-left: 6px solid #a66ee9;\n}\n.error[_ngcontent-%COMP%] {\n  border-left: 6px solid #f73357;\n}\n.warning[_ngcontent-%COMP%] {\n  border-left: 6px solid #ff7264;\n}\n.improvement[_ngcontent-%COMP%] {\n  border-left: 6px solid #06dbe4;\n}\n.notification[_ngcontent-%COMP%] {\n  border-left: 6px solid #18BC9C;\n}\n.context[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 400;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL3N0eWxlcy9fdmFyaWFibGVzX2lhdGkuc2NzcyIsIi4uLy4uLy4uLy4uLy4uL2ZlZWRiYWNrLWl0ZW0uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBZ0JBO0VBQ0Usa0NBQUE7RUFDQSxzZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7QUNmRjtBRGtCQTtFQUNFLHlCQUFBO0VBQ0Esc2dCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0FDaEJGO0FEbUJBO0VBQ0UscUJBQUE7RUFDQSx5SUFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSw0SkFBQTtBQ2pCRjtBRG9CQTtFQUNFLHFCQUFBO0VBQ0EsMklBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsNEpBQUE7QUNsQkY7QUF6QkE7RUFDRSxpQkFBQTtFQUNBLGdCQUFBO0FBMkJGO0FBeEJBO0VBQ0UsVUFBQTtBQTJCRjtBQXhCQTtFQUNFLGVBQUE7RUFFQSxnQkFBQTtFQUNBLGFBQUE7RUFHQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkQ4QlM7QUNOWDtBQXJCQTtFQUNFLHFCQUFBO0FBd0JGO0FBckJBO0VBQ0UscUJBQUE7QUF3QkY7QUFyQkE7RUFDRSw4QkFBQTtBQXdCRjtBQXJCQTtFQUVFLDhCQUFBO0FBdUJGO0FBckJBO0VBSUUsOEJBQUE7QUFxQkY7QUFuQkE7RUFHRSw4QkFBQTtBQW9CRjtBQWpCQTtFQUlFLDhCQUFBO0FBaUJGO0FBZEE7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7QUFpQkYiLCJmaWxlIjoiZmVlZGJhY2staXRlbS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIEZsYXRseSA0LjAuMFxuLy8gQm9vdHN3YXRjaFxuXG4vL1xuLy8gQ29sb3Igc3lzdGVtXG4vL1xuXG4vLyBJQVRJXG4kaWF0aV9vY2VhbjogICAjMTU1MzM2ICFkZWZhdWx0O1xuJGlhdGlfYWlyOiAgICAgIzA2ZGJlNCAhZGVmYXVsdDtcbiRpYXRpX3dpbmQ6ICAgICNhNjZlZTkgIWRlZmF1bHQ7XG4kaWF0aS1zdW5yaXNlOiAjZmY3MjY0ICFkZWZhdWx0O1xuJGlhdGktbGFuZDogICAgIzAwYzQ5NyAhZGVmYXVsdDtcbiRpYXRpLXN1bnNldDogICNmNzMzNTcgIWRlZmF1bHQ7XG4kaWF0aS1hc2g6ICAgICAjZTNlM2UzICFkZWZhdWx0OyAgICBcblxuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiBcImNoYWxldC1sb25kb24tc2l4dHlcIjtcbiAgc3JjOiB1cmwoXCJodHRwczovL3VzZS50eXBla2l0Lm5ldC9hZi9iMjBlZDQvMDAwMDAwMDAwMDAwMDAwMDAwMDE1NGQ1LzI3L2w/cHJpbWVyPTdjZGNiNDRiZTRhN2RiODg3N2ZmYTVjMDAwN2I4ZGQ4NjViM2JiYzM4MzgzMWZlMmVhMTc3ZjYyMjU3YTkxOTEmZnZkPW40JnY9M1wiKSBmb3JtYXQoXCJ3b2ZmMlwiKSwgdXJsKFwiaHR0cHM6Ly91c2UudHlwZWtpdC5uZXQvYWYvYjIwZWQ0LzAwMDAwMDAwMDAwMDAwMDAwMDAxNTRkNS8yNy9kP3ByaW1lcj03Y2RjYjQ0YmU0YTdkYjg4NzdmZmE1YzAwMDdiOGRkODY1YjNiYmMzODM4MzFmZTJlYTE3N2Y2MjI1N2E5MTkxJmZ2ZD1uNCZ2PTNcIikgZm9ybWF0KFwid29mZlwiKSwgdXJsKFwiaHR0cHM6Ly91c2UudHlwZWtpdC5uZXQvYWYvYjIwZWQ0LzAwMDAwMDAwMDAwMDAwMDAwMDAxNTRkNS8yNy9hP3ByaW1lcj03Y2RjYjQ0YmU0YTdkYjg4NzdmZmE1YzAwMDdiOGRkODY1YjNiYmMzODM4MzFmZTJlYTE3N2Y2MjI1N2E5MTkxJmZ2ZD1uNCZ2PTNcIikgZm9ybWF0KFwib3BlbnR5cGVcIik7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgZm9udC1kaXNwbGF5OiBhdXRvO1xufVxuXG5AZm9udC1mYWNlIHtcbiAgZm9udC1mYW1pbHk6IFwicHJhZ21hdGljYVwiO1xuICBzcmM6IHVybChcImh0dHBzOi8vdXNlLnR5cGVraXQubmV0L2FmLzk4Mzg3Mi8wMDAwMDAwMDAwMDAwMDAwMDAwMTAwY2MvMjcvbD9wcmltZXI9N2NkY2I0NGJlNGE3ZGI4ODc3ZmZhNWMwMDA3YjhkZDg2NWIzYmJjMzgzODMxZmUyZWExNzdmNjIyNTdhOTE5MSZmdmQ9bjcmdj0zXCIpIGZvcm1hdChcIndvZmYyXCIpLCB1cmwoXCJodHRwczovL3VzZS50eXBla2l0Lm5ldC9hZi85ODM4NzIvMDAwMDAwMDAwMDAwMDAwMDAwMDEwMGNjLzI3L2Q/cHJpbWVyPTdjZGNiNDRiZTRhN2RiODg3N2ZmYTVjMDAwN2I4ZGQ4NjViM2JiYzM4MzgzMWZlMmVhMTc3ZjYyMjU3YTkxOTEmZnZkPW43JnY9M1wiKSBmb3JtYXQoXCJ3b2ZmXCIpLCB1cmwoXCJodHRwczovL3VzZS50eXBla2l0Lm5ldC9hZi85ODM4NzIvMDAwMDAwMDAwMDAwMDAwMDAwMDEwMGNjLzI3L2E/cHJpbWVyPTdjZGNiNDRiZTRhN2RiODg3N2ZmYTVjMDAwN2I4ZGQ4NjViM2JiYzM4MzgzMWZlMmVhMTc3ZjYyMjU3YTkxOTEmZnZkPW43JnY9M1wiKSBmb3JtYXQoXCJvcGVudHlwZVwiKTtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXdlaWdodDogNzAwO1xuICBmb250LWRpc3BsYXk6IGF1dG87XG59XG5cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIjtcbiAgc3JjOiBsb2NhbChcIlJvYm90byBSZWd1bGFyXCIpLCBsb2NhbChcIlJvYm90by1SZWd1bGFyXCIpLCB1cmwoXCIvL2ZvbnRzLmdzdGF0aWMuY29tL3Mvcm9ib3RvL3YxOC9LRk9tQ25xRXU5MkZyMU11NG14Sy53b2ZmMlwiKSBmb3JtYXQoXCJ3b2ZmMlwiKTtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXdlaWdodDogNDAwO1xuICB1bmljb2RlLXJhbmdlOiBVKzAtRkYsIFUrMTMxLCBVKzE1Mi0xNTMsIFUrMkJCLTJCQywgVSsyQzYsIFUrMkRBLCBVKzJEQywgVSsyMDAwLTIwNkYsIFUrMjA3NCwgVSsyMEFDLCBVKzIxMjIsIFUrMjE5MSwgVSsyMTkzLCBVKzIyMTIsIFUrMjIxNSwgVStGRUZGLCBVK0ZGRkQ7XG59XG5cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIjtcbiAgc3JjOiBsb2NhbChcIlJvYm90byBNZWRpdW1cIiksIGxvY2FsKFwiUm9ib3RvLU1lZGl1bVwiKSwgdXJsKFwiLy9mb250cy5nc3RhdGljLmNvbS9zL3JvYm90by92MTgvS0ZPbENucUV1OTJGcjFNbUVVOWZCQmM0LndvZmYyXCIpIGZvcm1hdChcIndvZmYyXCIpO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIHVuaWNvZGUtcmFuZ2U6IFUrMC1GRiwgVSsxMzEsIFUrMTUyLTE1MywgVSsyQkItMkJDLCBVKzJDNiwgVSsyREEsIFUrMkRDLCBVKzIwMDAtMjA2RiwgVSsyMDc0LCBVKzIwQUMsIFUrMjEyMiwgVSsyMTkxLCBVKzIxOTMsIFUrMjIxMiwgVSsyMjE1LCBVK0ZFRkYsIFUrRkZGRDtcbn1cblxuJHdoaXRlOiAgICAjZmZmICFkZWZhdWx0O1xuJGdyYXktMTAwOiAjZjhmOWZhICFkZWZhdWx0O1xuJGdyYXktMjAwOiAjZWNmMGYxICFkZWZhdWx0O1xuJGdyYXktMzAwOiAjZGVlMmU2ICFkZWZhdWx0O1xuJGdyYXktNDAwOiAjY2VkNGRhICFkZWZhdWx0O1xuJGdyYXktNTAwOiAjYjRiY2MyICFkZWZhdWx0O1xuJGdyYXktNjAwOiAjOTVhNWE2ICFkZWZhdWx0O1xuJGdyYXktNzAwOiAjN2I4YThiICFkZWZhdWx0O1xuJGdyYXktODAwOiAjMzQzYTQwICFkZWZhdWx0O1xuJGdyYXktOTAwOiAjMjEyNTI5ICFkZWZhdWx0O1xuJGJsYWNrOiAgICAjMDAwICFkZWZhdWx0O1xuXG4kYmx1ZTogICAgIzJDM0U1MCAhZGVmYXVsdDtcbiRpbmRpZ286ICAjNjYxMGYyICFkZWZhdWx0O1xuJHB1cnBsZTogICM2ZjQyYzEgIWRlZmF1bHQ7XG4kcGluazogICAgI2U4M2U4YyAhZGVmYXVsdDtcbiRyZWQ6ICAgICAjRTc0QzNDICFkZWZhdWx0O1xuJG9yYW5nZTogICNmZDdlMTQgIWRlZmF1bHQ7XG4keWVsbG93OiAgI0YzOUMxMiAhZGVmYXVsdDtcbiRncmVlbjogICAjMThCQzlDICFkZWZhdWx0O1xuJHRlYWw6ICAgICMyMGM5OTcgIWRlZmF1bHQ7XG4kY3lhbjogICAgIzM0OThEQiAhZGVmYXVsdDtcblxuJHByaW1hcnk6ICAgICAgICRpYXRpLW9jZWFuICFkZWZhdWx0O1xuJHNlY29uZGFyeTogICAgICRncmF5LTYwMCAhZGVmYXVsdDtcbiRzdWNjZXNzOiAgICAgICAkaWF0aS1sYW5kICFkZWZhdWx0O1xuJGluZm86ICAgICAgICAgICRpYXRpLWFpciAhZGVmYXVsdDtcbiR3YXJuaW5nOiAgICAgICAkaWF0aS1zdW5yaXNlICFkZWZhdWx0O1xuJGRhbmdlcjogICAgICAgICRpYXRpLXN1bnNldCAhZGVmYXVsdDtcbiRsaWdodDogICAgICAgICAkZ3JheS0yMDAgIWRlZmF1bHQ7XG4kZGFyazogICAgICAgICAgJGdyYXktNzAwICFkZWZhdWx0O1xuXG4vLyBMaW5rc1xuXG4kbGluay1jb2xvcjogICAgICAgICAgICAgICAgJGlhdGktb2NlYW4gIWRlZmF1bHQ7XG5cbi8vIEZvbnRzXG5cbiRmb250LWZhbWlseS1zYW5zLXNlcmlmOiAgICAgIFwiY2hhbGV0LWxvbmRvbi1zaXh0eVwiLCAtYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsIFwiU2Vnb2UgVUlcIiwgUm9ib3RvLCBcIkhlbHZldGljYSBOZXVlXCIsIEFyaWFsLCBzYW5zLXNlcmlmLCBcIkFwcGxlIENvbG9yIEVtb2ppXCIsIFwiU2Vnb2UgVUkgRW1vamlcIiwgXCJTZWdvZSBVSSBTeW1ib2xcIiAhZGVmYXVsdDtcbiAgXG4kZm9udC1zaXplLWJhc2U6ICAgICAgICAgICAgICAwLjkzNzVyZW0gIWRlZmF1bHQ7XG5cbiRoMS1mb250LXNpemU6ICAgICAgICAgICAgICAgIDNyZW0gIWRlZmF1bHQ7XG4kaDItZm9udC1zaXplOiAgICAgICAgICAgICAgICAyLjVyZW0gIWRlZmF1bHQ7XG4kaDMtZm9udC1zaXplOiAgICAgICAgICAgICAgICAycmVtICFkZWZhdWx0O1xuXG4vLyBUYWJsZXNcblxuJHRhYmxlLWFjY2VudC1iZzogICAgICAgICAgICAgJGdyYXktMjAwICFkZWZhdWx0O1xuXG4vLyBEcm9wZG93bnNcblxuJGRyb3Bkb3duLWxpbmstY29sb3I6ICAgICAgICAgICAgICAgJGdyYXktNzAwICFkZWZhdWx0O1xuJGRyb3Bkb3duLWxpbmstaG92ZXItY29sb3I6ICAgICAgICAgJHdoaXRlICFkZWZhdWx0O1xuJGRyb3Bkb3duLWxpbmstaG92ZXItYmc6ICAgICAgICAgICAgJHByaW1hcnkgIWRlZmF1bHQ7XG5cbi8vIE5hdnNcblxuJG5hdi1saW5rLXBhZGRpbmcteTogICAgICAgICAgICAgICAgLjVyZW0gIWRlZmF1bHQgIWRlZmF1bHQ7XG4kbmF2LWxpbmstcGFkZGluZy14OiAgICAgICAgICAgICAgICAycmVtICFkZWZhdWx0O1xuJG5hdi1saW5rLWRpc2FibGVkLWNvbG9yOiAgICAgICAgICAgJGdyYXktNjAwICFkZWZhdWx0ICFkZWZhdWx0O1xuXG4kbmF2LXRhYnMtYm9yZGVyLWNvbG9yOiAgICAgICAgICAgICAkZ3JheS0yMDAgIWRlZmF1bHQ7XG5cbi8vIE5hdmJhclxuXG4kbmF2YmFyLXBhZGRpbmcteTogICAgICAgICAgICAgICAgICAxcmVtICFkZWZhdWx0O1xuXG4kbmF2YmFyLWRhcmstY29sb3I6ICAgICAgICAgICAgICAgICAkd2hpdGUgIWRlZmF1bHQ7XG4kbmF2YmFyLWRhcmstaG92ZXItY29sb3I6ICAgICAgICAgICAkc3VjY2VzcyAhZGVmYXVsdDtcblxuLy8gUGFnaW5hdGlvblxuXG4kcGFnaW5hdGlvbi1jb2xvcjogICAgICAgICAgICAgICAgICAkd2hpdGUgIWRlZmF1bHQ7XG4kcGFnaW5hdGlvbi1iZzogICAgICAgICAgICAgICAgICAgICAkc3VjY2VzcyAhZGVmYXVsdDtcbiRwYWdpbmF0aW9uLWJvcmRlci13aWR0aDogICAgICAgICAgIDAgIWRlZmF1bHQ7XG4kcGFnaW5hdGlvbi1ib3JkZXItY29sb3I6ICAgICAgICAgICB0cmFuc3BhcmVudCAhZGVmYXVsdDtcblxuJHBhZ2luYXRpb24taG92ZXItY29sb3I6ICAgICAgICAgICAgJHdoaXRlICFkZWZhdWx0O1xuJHBhZ2luYXRpb24taG92ZXItYmc6ICAgICAgICAgICAgICAgZGFya2VuKCRzdWNjZXNzLCAxNSUpICFkZWZhdWx0O1xuJHBhZ2luYXRpb24taG92ZXItYm9yZGVyLWNvbG9yOiAgICAgdHJhbnNwYXJlbnQgIWRlZmF1bHQ7XG5cbiRwYWdpbmF0aW9uLWFjdGl2ZS1iZzogICAgICAgICAgICAgICRwYWdpbmF0aW9uLWhvdmVyLWJnICFkZWZhdWx0O1xuJHBhZ2luYXRpb24tYWN0aXZlLWJvcmRlci1jb2xvcjogICAgdHJhbnNwYXJlbnQgIWRlZmF1bHQ7XG5cbiRwYWdpbmF0aW9uLWRpc2FibGVkLWNvbG9yOiAgICAgICAgICRncmF5LTIwMCAhZGVmYXVsdDtcbiRwYWdpbmF0aW9uLWRpc2FibGVkLWJnOiAgICAgICAgICAgIGxpZ2h0ZW4oJHN1Y2Nlc3MsIDE1JSkgIWRlZmF1bHQ7XG4kcGFnaW5hdGlvbi1kaXNhYmxlZC1ib3JkZXItY29sb3I6ICB0cmFuc3BhcmVudCAhZGVmYXVsdDtcblxuLy8gUHJvZ3Jlc3MgYmFyc1xuXG4kcHJvZ3Jlc3MtaGVpZ2h0OiAgICAgICAgICAgICAgICAgICAxMHB4ICFkZWZhdWx0O1xuJHByb2dyZXNzLWZvbnQtc2l6ZTogICAgICAgICAgICAgICAgMTBweCAhZGVmYXVsdDtcblxuLy8gTGlzdCBncm91cFxuXG4kbGlzdC1ncm91cC1ob3Zlci1iZzogICAgICAgICAgICAgICAkZ3JheS0yMDAgIWRlZmF1bHQ7XG5cbiRsaXN0LWdyb3VwLWRpc2FibGVkLWJnOiAgICAgICAgICAgICRncmF5LTIwMCAhZGVmYXVsdDtcblxuLy8gQ2xvc2VcblxuJGNsb3NlLWNvbG9yOiAgICAgICAgICAgICAgICAgICAgICAgJHdoaXRlICFkZWZhdWx0O1xuJGNsb3NlLXRleHQtc2hhZG93OiAgICAgICAgICAgICAgICAgbm9uZSAhZGVmYXVsdDtcbiIsIkBpbXBvcnQgXCIuLi8uLi8uLi8uLi9zdHlsZXMvdmFyaWFibGVzXCI7XG5cbi5jYXRlZ29yeS1sYWJlbCB7XG4gIGZvbnQtc2l6ZTogMS4ycmVtO1xuICBmb250LXdlaWdodDogNzAwO1xufVxuXG4uZmVlZGJhY2sgPiB1bCB7XG4gIHBhZGRpbmc6IDA7XG59XG5cbi5tZXNzYWdlIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICAvLyBmb250LXdlaWdodDogNzAwO1xuICBmb250LXdlaWdodDogNTAwO1xuICBwYWRkaW5nOiAxMnB4O1xuXG4gIC8vIE5ld1xuICBjb2xvcjogYmxhY2s7XG4gIG1hcmdpbi1ib3R0b206IDRweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJGdyYXktMjAwO1xufVxuXG4ubWVzc2FnZS10ZXh0e1xuICB3aGl0ZS1zcGFjZTogcHJlLWxpbmU7XG59XG5cbi5mZWVkYmFjay1saXN0e1xuICBsaXN0LXN0eWxlLXR5cGU6bm9uZTtcbn1cblxuLmNyaXRpY2Fse1xuICBib3JkZXItbGVmdDogNnB4IHNvbGlkICRzZXZlcml0eS1jcml0aWNhbDtcbn1cblxuLmVycm9yIHtcbiAgLy8gYmFja2dyb3VuZC1jb2xvcjogI2Y3MzM1NztcbiAgYm9yZGVyLWxlZnQ6IDZweCBzb2xpZCAjZjczMzU3O1xufVxuLndhcm5pbmcge1xuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAkc2V2ZXJpdHktd2FybmluZztcbiAgLy8gY29sb3I6IHdoaXRlO1xuXG4gIGJvcmRlci1sZWZ0OiA2cHggc29saWQgJHNldmVyaXR5LXdhcm5pbmc7XG59XG4uaW1wcm92ZW1lbnQge1xuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAkc2V2ZXJpdHktaW1wcm92ZW1lbnQ7XG4gIC8vY29sb3I6IHdoaXRlO1xuICBib3JkZXItbGVmdDogNnB4IHNvbGlkICRzZXZlcml0eS1pbXByb3ZlbWVudDtcblxufVxuLm5vdGlmaWNhdGlvbiB7XG4gIC8vIGJhY2tncm91bmQtY29sb3I6ICNlM2UzZTM7XG4gIC8vIGNvbG9yOiB3aGl0ZTtcblxuICBib3JkZXItbGVmdDogNnB4IHNvbGlkICRzZXZlcml0eS1ub3RpZmljYXRpb25zO1xufVxuXG4uY29udGV4dCB7XG4gIGZvbnQtc2l6ZTogMTVweDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbn1cbiJdfQ== */"]
       });
       /***/
@@ -690,7 +665,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("IATI version: ", ctx_r0.validationReport.report.iatiVersion, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("IATI version: ", ctx_r0.validationReport.iatiVersion, "");
         }
       }
 
@@ -708,7 +683,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" | Type: ", ctx_r1.validationReport.report.fileType, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" | Type: ", ctx_r1.validationReport.fileType, "");
         }
       }
 
@@ -787,11 +762,11 @@
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.validationReport.report.iatiVersion);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.validationReport.iatiVersion);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.validationReport.report.fileType);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.validationReport.fileType);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -1572,11 +1547,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("feedbackData", ctx_r11.companyFeedback)("title", "Activity file feedback")("item", "activity")("items", "activities");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("feedbackData", ctx_r11.fileErrors)("title", "Activity file feedback")("item", "activity")("items", "activities");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activityData", ctx_r11.activities)("title", "Feedback per activity")("item", "activity")("items", "activities")("dqfs", ctx_r11.data);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activityData", ctx_r11.activityErrors)("title", "Feedback per activity")("item", "activity")("items", "activities")("dqfs", ctx_r11.data);
         }
       }
 
@@ -1594,7 +1569,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r8.filetype === "iati-activities");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r8.fileType === "iati-activities");
         }
       }
 
@@ -1614,11 +1589,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("feedbackData", ctx_r9.companyFeedback)("title", "Organisation file feedback")("item", "organisation")("items", "organisations");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("feedbackData", ctx_r9.fileErrors)("title", "Organisation file feedback")("item", "organisation")("items", "organisations");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activityData", ctx_r9.activities)("title", "Organisation feedback")("item", "organisation")("items", "organisations")("dqfs", ctx_r9.data);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activityData", ctx_r9.activityErrors)("title", "Organisation feedback")("item", "organisation")("items", "organisations")("dqfs", ctx_r9.data);
         }
       }
 
@@ -1636,7 +1611,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("feedbackData", ctx_r10.companyFeedbackData)("title", "Not an IATI file");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("feedbackData", ctx_r10.fileErrors)("title", "Not an IATI file");
         }
       }
 
@@ -1712,15 +1687,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r5.companyFeedback);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r5.validationReport);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r5.filetype === "iati-organisations");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r5.fileType === "iati-organisations");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r5.filetype === "not-iati");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r5.fileType === "");
         }
       }
 
@@ -1745,18 +1720,21 @@
           this.tmpWorkspaceId = '';
           this.activityData = [];
           this.activities = [];
-          this.companyFeedbackData = [];
           this.companyFeedback = [];
           this.severities = [];
           this.sources = [];
           this.categories = [];
-          this.filetype = '';
+          this.validationReportResponse = {};
+          this.validationReport = {};
+          this.fileErrors = [];
+          this.fileErrorsOriginal = [];
+          this.activityErrors = [];
+          this.activityErrorsOriginal = [];
+          this.fileType = '';
 
           this.filterSeverity = function (message) {
-            return message.rulesets.some(function (rs) {
-              return _this2.severities.some(function (sev) {
-                return sev.show === true && sev.slug === rs.severity;
-              });
+            return _this2.severities.some(function (sev) {
+              return sev.show === true && sev.slug === message.severity;
             });
           };
 
@@ -1849,74 +1827,69 @@
               });
             } else {
               this.organisationService.getDocument(id).subscribe(function (documentInfo) {
-                if (documentInfo) {
+                if (length in documentInfo && documentInfo.length === 1) {
                   _this4.documentInfo = documentInfo[0];
 
                   _this4.organisationService.getOrganisationById(_this4.documentInfo.publisher).subscribe(function (orgInfo) {
-                    if (orgInfo) {
+                    if (length in orgInfo && orgInfo.length === 1) {
                       _this4.organisationInfo = orgInfo[0];
 
                       _this4.dataQualityFeedbackService.getValidationReport(id).subscribe(function (validationInfo) {
                         if (validationInfo) {
-                          _this4.validationReport = validationInfo;
+                          _this4.validationReportResponse = validationInfo;
+                          _this4.validationReport = _this4.validationReportResponse.report;
+
+                          _this4.setData(null);
+                        } else {
+                          _this4.documentInfo = undefined;
+                          _this4.validationReportResponse = undefined;
+
+                          _this4.loader.hide();
                         }
 
                         _this4.loader.hide();
                       });
+                    } else {
+                      _this4.documentInfo = undefined;
+                      _this4.validationReportResponse = undefined;
+
+                      _this4.loader.hide();
                     }
                   });
-                } // if (iatiDataSet && iatiDataSet.length) {
-                //   this.dataset = iatiDataSet[0];
-                //   this.dataQualityFeedbackService.getDataQualityFeedback(iatiDataSet[0].md5).subscribe(
-                //     data => {
-                //       this.setData(data);
-                //     },
-                //     error => {
-                //       this.logger.error('Error loadActivityData', error);
-                //       this.loader.hide();
-                //     }
-                //   );
-                // } else {
-                //   // FIXME: check if there's a better handle for a "no dataset" situation
-                //   this.activityData = undefined;
-                //   this.companyFeedbackData = undefined;
-                //   this.loader.hide();
-                // }
+                } else {
+                  _this4.documentInfo = undefined;
+                  _this4.validationReportResponse = undefined;
 
+                  _this4.loader.hide();
+                }
               });
             }
           }
         }, {
           key: "setData",
           value: function setData(data) {
-            this.data = data;
-            this.fileName = this.dataset.filename;
+            this.fileType = this.validationReport.fileType;
 
-            if (data.feedback) {
-              this.companyFeedbackData = data.feedback;
+            if ('url' in this.documentInfo) {
+              this.fileName = this.documentInfo.url.split('/').pop();
+            } else {
+              this.fileName = 'No filename available';
             }
 
-            this.filetype = data.filetype;
-
-            if (data.filetype === 'iati-activities') {
-              if (data.activities) {
-                this.activityData = data.activities;
+            this.fileErrors = this.validationReport.errors.reduce(function (acc, actOrgFile) {
+              if (actOrgFile.identifier === 'file') {
+                return actOrgFile.errors;
               }
-            }
 
-            if (data.filetype === 'iati-organisations') {
-              if (data.organisations) {
-                this.activityData = data.organisations;
-              }
-            }
-
-            if (this.activityData === undefined && this.companyFeedbackData === undefined) {
-              this.loader.hide();
-              return;
-            }
-
+              return acc;
+            }, []);
+            this.fileErrorsOriginal = _toConsumableArray(this.fileErrors);
+            this.activityErrors = this.validationReport.errors.filter(function (actOrgFile) {
+              return actOrgFile.identifier !== 'file';
+            });
+            this.activityErrorsOriginal = _toConsumableArray(this.activityErrors);
             this.loadCategories();
-            this.loadTypeMessages(this.activityData, this.companyFeedbackData);
+            this.loadTypeMessages(this.validationReport.errors);
             this.filterActivities();
             this.loader.hide();
           }
@@ -1926,29 +1899,18 @@
             var _this5 = this;
 
             var uniqueCat = [];
-            this.activityData.forEach(function (act) {
-              act.feedback.forEach(function (fb) {
+            this.validationReport.errors.forEach(function (actOrgFile) {
+              actOrgFile.errors.forEach(function (error) {
                 if (uniqueCat.some(function (u) {
-                  return u.id === fb.category;
-                })) {// nothing
+                  return u.id === error.category;
+                })) {//nothing
                 } else {
                   uniqueCat.push({
-                    id: fb.category,
-                    name: fb.label
+                    id: error.category,
+                    name: _this5.dataQualityFeedbackService.getCategoryLabel(error.category)
                   });
                 }
               });
-            });
-            this.companyFeedbackData.forEach(function (element) {
-              if (uniqueCat.some(function (u) {
-                return u.id === element.category;
-              })) {// nothing
-              } else {
-                uniqueCat.push({
-                  id: element.category,
-                  name: element.label
-                });
-              }
             });
             uniqueCat.forEach(function (u) {
               _this5.categories.push({
@@ -1962,45 +1924,32 @@
           }
         }, {
           key: "loadTypeMessages",
-          value: function loadTypeMessages(activities, inCompanyFeedback) {
+          value: function loadTypeMessages(errors) {
             var _this6 = this;
 
             var types = []; // Get unique messages, with the highest level of severity
 
-            activities.forEach(function (act) {
-              act.feedback.forEach(function (fb) {
-                fb.messages.forEach(function (mes) {
+            errors.forEach(function (actOrgFile) {
+              actOrgFile.errors.forEach(function (errorCat) {
+                errorCat.errors.forEach(function (error) {
+                  var message = error.message,
+                      severity = error.severity,
+                      id = error.id;
+
                   if (!types.some(function (t) {
-                    return t.id === mes.id;
+                    return t.id === id;
                   })) {
                     var newType = {
                       sev: '',
                       id: '',
                       text: ''
                     };
-                    newType.sev = _this6.getfeedbackSeverity(mes);
-                    newType.id = mes.id;
-                    newType.text = mes.text;
+                    newType.sev = severity;
+                    newType.id = id;
+                    newType.text = message;
                     types.push(newType);
                   }
                 });
-              });
-            });
-            inCompanyFeedback.forEach(function (fb) {
-              fb.messages.forEach(function (mes) {
-                if (!types.some(function (t) {
-                  return t.id === mes.id;
-                })) {
-                  var newType = {
-                    sev: '',
-                    id: '',
-                    text: ''
-                  };
-                  newType.sev = _this6.getfeedbackSeverity(mes);
-                  newType.id = mes.id;
-                  newType.text = mes.text;
-                  types.push(newType);
-                }
               });
             }); // push the messages in the severity it belongs to
 
@@ -2024,48 +1973,46 @@
             var _this7 = this;
 
             this.loader.show();
-            var filtered = JSON.parse(JSON.stringify(this.activityData));
+            var filtered = JSON.parse(JSON.stringify(this.activityErrorsOriginal));
             this.filterCompanyFeedback(); // Filter feedback category
 
             filtered.forEach(function (act) {
-              act.feedback = act.feedback.filter(_this7.filterCategory);
+              act.errors = act.errors.filter(_this7.filterCategory);
             }); // Filter messages that are not selected in source
+            // filtered.forEach(act => {
+            //   act.errors.forEach(fb => {
+            //     fb.errors.forEach(mes => {
+            //       mes.rulesets = mes.rulesets.filter(this.filterSource);
+            //     });
+            //   });
+            // });
+            // Filter type messages selected
 
             filtered.forEach(function (act) {
-              act.feedback.forEach(function (fb) {
-                fb.messages.forEach(function (mes) {
-                  mes.rulesets = mes.rulesets.filter(_this7.filterSource);
-                });
-              });
-            }); // Filter type messages selected
-
-            filtered.forEach(function (act) {
-              act.feedback.forEach(function (fb) {
-                fb.messages = fb.messages.filter(_this7.filterTypeMessage);
+              act.errors.forEach(function (fb) {
+                fb.errors = fb.errors.filter(_this7.filterTypeMessage);
               });
             }); // Filter messages with severity selected
 
             filtered.forEach(function (act) {
-              act.feedback.forEach(function (fb) {
-                fb.messages = fb.messages.filter(_this7.filterSeverity);
+              act.errors.forEach(function (fb) {
+                fb.errors = fb.errors.filter(_this7.filterSeverity);
               });
             }); // Filter feedback whitout messages
 
             filtered.forEach(function (act) {
-              act.feedback = act.feedback.filter(function (fb) {
-                return fb.messages.length > 0;
+              act.errors = act.errors.filter(function (fb) {
+                return fb.errors.length > 0;
               });
             }); // Filter activities without feedback
 
             filtered = filtered.filter(function (act) {
-              return act.feedback.length > 0;
+              return act.errors.length > 0;
             });
-            this.activities = filtered; // set count on filter items
+            this.activityErrors = filtered; // set count on filter items
 
             this.setSeverityCount();
-            this.setSourceCount();
-            this.setCategoryCount(); // this.loadTypeMessages(this.activities);
-
+            this.setCategoryCount();
             this.setTypeMessageCount();
             this.loader.hide();
           }
@@ -2074,29 +2021,29 @@
           value: function filterCompanyFeedback() {
             var _this8 = this;
 
-            var filteredFeedback = JSON.parse(JSON.stringify(this.companyFeedbackData)); // Filter feedback category
+            var filteredFeedback = JSON.parse(JSON.stringify(this.fileErrorsOriginal)); // Filter feedback category
 
             filteredFeedback = filteredFeedback.filter(this.filterCategory); // Filter messages that are not selected in source
+            // filteredFeedback.forEach(fb => {
+            //   fb.errors.forEach(mes => {
+            //     mes.rulesets = mes.rulesets.filter(this.filterSource);
+            //   });
+            // });
+            // Filter type messages selected
 
             filteredFeedback.forEach(function (fb) {
-              fb.messages.forEach(function (mes) {
-                mes.rulesets = mes.rulesets.filter(_this8.filterSource);
-              });
-            }); // Filter type messages selected
+              fb.errors = fb.errors.filter(_this8.filterTypeMessage);
+            }); // Filter errors with severity selected
 
             filteredFeedback.forEach(function (fb) {
-              fb.messages = fb.messages.filter(_this8.filterTypeMessage);
-            }); // Filter messages with severity selected
-
-            filteredFeedback.forEach(function (fb) {
-              fb.messages = fb.messages.filter(_this8.filterSeverity);
-            }); // Filter feedback without messages
+              fb.errors = fb.errors.filter(_this8.filterSeverity);
+            }); // Filter feedback without errors
 
             filteredFeedback = filteredFeedback.filter(function (fb) {
-              return fb.messages.length > 0;
+              return fb.errors.length > 0;
             }); // Filter activities without feedback
 
-            this.companyFeedback = filteredFeedback;
+            this.fileErrors = filteredFeedback;
           } // Set the count of messages to the severity
 
         }, {
@@ -2112,58 +2059,18 @@
           key: "getIssueCount",
           value: function getIssueCount(severity) {
             var count = 0;
-            this.activities.forEach(function (act) {
-              act.feedback.forEach(function (fb) {
-                fb.messages.forEach(function (mes) {
-                  if (mes.rulesets.some(function (r) {
-                    return r.severity === severity;
-                  })) {
+            this.activityErrors.forEach(function (act) {
+              act.errors.forEach(function (fb) {
+                fb.errors.forEach(function (mes) {
+                  if (mes.severity === severity) {
                     count += mes.context.length;
                   }
                 });
               });
             });
-            this.companyFeedbackData.forEach(function (fb) {
-              fb.messages.forEach(function (mes) {
-                if (mes.rulesets.some(function (r) {
-                  return r.severity === severity;
-                })) {
-                  count += mes.context.length;
-                }
-              });
-            });
-            return count;
-          } // Set the count of messages to the sources
-
-        }, {
-          key: "setSourceCount",
-          value: function setSourceCount() {
-            var _this10 = this;
-
-            this.sources.forEach(function (src) {
-              src.count = src.show ? _this10.getSourceCount(src.slug) : null;
-            });
-          }
-        }, {
-          key: "getSourceCount",
-          value: function getSourceCount(type) {
-            var count = 0;
-            this.activities.forEach(function (act) {
-              act.feedback.forEach(function (fb) {
-                fb.messages.forEach(function (mes) {
-                  if (mes.rulesets.some(function (r) {
-                    return r.src === type;
-                  })) {
-                    count += mes.context.length;
-                  }
-                });
-              });
-            });
-            this.companyFeedbackData.forEach(function (fb) {
-              fb.messages.forEach(function (mes) {
-                if (mes.rulesets.some(function (r) {
-                  return r.src === type;
-                })) {
+            this.fileErrors.forEach(function (fb) {
+              fb.errors.forEach(function (mes) {
+                if (mes.severity === severity) {
                   count += mes.context.length;
                 }
               });
@@ -2173,31 +2080,22 @@
         }, {
           key: "setCategoryCount",
           value: function setCategoryCount() {
-            var _this11 = this;
+            var _this10 = this;
 
             this.categories.forEach(function (cat) {
-              cat.count = cat.show ? _this11.getCategoryCount(cat.id) : null;
+              cat.count = cat.show ? _this10.getCategoryCount(cat.id) : null;
             });
           }
         }, {
           key: "getCategoryCount",
           value: function getCategoryCount(id) {
             var count = 0;
-            this.activities.forEach(function (act) {
-              act.feedback.forEach(function (fb) {
-                if (fb.category === id) {
-                  fb.messages.forEach(function (mes) {
-                    count += mes.context.length;
-                  });
+            this.validationReport.errors.forEach(function (actOrgFile) {
+              actOrgFile.errors.forEach(function (errorCatGroup) {
+                if (errorCatGroup.category === id) {
+                  count += errorCatGroup.errors.length;
                 }
               });
-            });
-            this.companyFeedbackData.forEach(function (fb) {
-              if (fb.category === id) {
-                fb.messages.forEach(function (mes) {
-                  count += mes.context.length;
-                });
-              }
             });
             return count;
           } // Set the count of the type-messages and sort types by count desc
@@ -2205,11 +2103,11 @@
         }, {
           key: "setTypeMessageCount",
           value: function setTypeMessageCount() {
-            var _this12 = this;
+            var _this11 = this;
 
             this.severities.forEach(function (t) {
               t.types.forEach(function (m) {
-                m.count = m.show ? _this12.getTypeMessageCount(m.id) : null;
+                m.count = m.show ? _this11.getTypeMessageCount(m.id) : null;
               });
             }); // Sort Type messages inside severity. Type with more messages on top
 
@@ -2223,20 +2121,15 @@
           key: "getTypeMessageCount",
           value: function getTypeMessageCount(typeId) {
             var count = 0;
-            this.activities.forEach(function (act) {
-              act.feedback.forEach(function (fb) {
-                fb.messages.forEach(function (mes) {
-                  if (mes.id === typeId) {
-                    count += mes.context.length;
+            this.validationReport.errors.forEach(function (actOrgFile) {
+              actOrgFile.errors.forEach(function (errorCatGroup) {
+                errorCatGroup.errors.forEach(function (error) {
+                  var id = error.id;
+
+                  if (typeId === id) {
+                    count += 1;
                   }
                 });
-              });
-            });
-            this.companyFeedbackData.forEach(function (fb) {
-              fb.messages.forEach(function (mes) {
-                if (mes.id === typeId) {
-                  count += mes.context.length;
-                }
               });
             });
             return count;
@@ -2264,25 +2157,15 @@
         }, {
           key: "getfeedbackSeverity",
           value: function getfeedbackSeverity(message) {
-            if (message.rulesets.some(function (x) {
-              return x.severity === 'danger';
-            })) {
+            if (message.severity === 'error') {
               return 'error';
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'critical';
-            })) {
+            } else if (message.severity === 'critical') {
               return 'critical';
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'warning';
-            })) {
+            } else if (message.severity === 'warning') {
               return 'warning';
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'info';
-            })) {
+            } else if (message.severity === 'info') {
               return 'improvement';
-            } else if (message.rulesets.some(function (x) {
-              return x.severity === 'success';
-            })) {
+            } else if (message.severity === 'success') {
               return 'notification';
             } else {
               return 'other';
@@ -2376,11 +2259,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.activityData === undefined && ctx.companyFeedbackData === undefined && !ctx.isLoading);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.documentInfo === undefined && ctx.validationReport === undefined && !ctx.isLoading);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.activityData !== undefined || ctx.companyFeedbackData !== undefined) && !ctx.isLoading);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.documentInfo !== undefined || ctx.validationReport !== undefined) && !ctx.isLoading);
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"], _main_report_info_main_report_info_component__WEBPACK_IMPORTED_MODULE_8__["MainReportInfoComponent"], _iati_info_iati_info_component__WEBPACK_IMPORTED_MODULE_9__["IatiInfoComponent"], _shared_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_10__["SpinnerComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLink"], _filter_severity_filter_severity_component__WEBPACK_IMPORTED_MODULE_11__["FilterSeverityComponent"], _filter_category_filter_category_component__WEBPACK_IMPORTED_MODULE_12__["FilterCategoryComponent"], _single_feedback_single_feedback_component__WEBPACK_IMPORTED_MODULE_13__["SingleFeedbackComponent"], _multi_feedback_multi_feedback_component__WEBPACK_IMPORTED_MODULE_14__["MultiFeedbackComponent"]],
@@ -2465,7 +2348,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r7.getIssueCount("danger"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r7.getIssueCount("error"));
         }
       }
 
@@ -2549,7 +2432,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.getIssueCount("danger") > 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.getIssueCount("error") > 0);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -2653,12 +2536,10 @@
           key: "getIssueCount",
           value: function getIssueCount(type) {
             var count = 0;
-            this.feedbackData.forEach(function (fb) {
-              fb.messages.forEach(function (mes) {
-                if (mes.rulesets.some(function (r) {
-                  return r.severity === type;
-                })) {
-                  count += mes.context.length;
+            this.feedbackData.forEach(function (catGroup) {
+              catGroup.errors.forEach(function (err) {
+                if (err.severity === type) {
+                  count += err.context.length;
                 }
               });
             });
@@ -2849,7 +2730,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r1.getIssueCount("danger"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r1.getIssueCount("error"));
         }
       }
 
@@ -2967,22 +2848,16 @@
         }, {
           key: "getIssueCount",
           value: function getIssueCount(type) {
-            var _this13 = this;
-
             var count = 0;
-            this.activity.feedback.forEach(function (fb) {
-              fb.messages.forEach(function (mes) {
-                if (mes.rulesets.some(function (r) {
-                  return r.severity === type;
-                })) {
-                  var override = _this13.overrideGuidanceLink(mes.id);
-
-                  if (override != null) {
-                    mes.rulesets.forEach(function (ruleset) {
-                      ruleset['href'] = override;
-                    });
-                  }
-
+            this.activity.errors.forEach(function (fb) {
+              fb.errors.forEach(function (mes) {
+                if (mes.severity === type) {
+                  // const override = this.overrideGuidanceLink(mes.id);
+                  // if (override != null) {
+                  //   mes.rulesets.forEach(ruleset => {
+                  //     ruleset['href'] = override;
+                  //   });
+                  // }
                   count += mes.context.length;
                 }
               });
@@ -3185,7 +3060,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.getIssueCount("danger") > 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.getIssueCount("error") > 0);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -3213,7 +3088,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.activity.feedback);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.activity.errors);
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbCollapse"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _feedback_item_feedback_item_component__WEBPACK_IMPORTED_MODULE_4__["FeedbackItemComponent"]],
@@ -4317,7 +4192,7 @@
         }, {
           key: "getReportInfo",
           value: function getReportInfo(id) {
-            var _this14 = this;
+            var _this12 = this;
 
             var reportInfo = {
               organisationName: '',
@@ -4328,9 +4203,9 @@
             this.http.get(url).subscribe(function (data) {
               reportInfo.fileName = data.filename;
               reportInfo.organisationSlug = data.publisher;
-              var urlPublisher = _this14.urlApiOrganisation + '/findOne/' + '?filter[where][slug]=' + data.publisher;
+              var urlPublisher = _this12.urlApiOrganisation + '/findOne/' + '?filter[where][slug]=' + data.publisher;
 
-              _this14.http.get(urlPublisher).subscribe(function (datas) {
+              _this12.http.get(urlPublisher).subscribe(function (datas) {
                 reportInfo.organisationName = datas.name;
                 return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])(reportInfo);
               });
@@ -4351,7 +4226,7 @@
               types: []
             }, {
               id: 'error',
-              slug: 'danger',
+              slug: 'error',
               name: 'Errors',
               description: 'Errors make it hard or impossible to use the data.',
               count: null,
@@ -4427,6 +4302,24 @@
               show: true
             }];
           }
+        }, {
+          key: "getCategoryLabel",
+          value: function getCategoryLabel(category) {
+            var categories = {
+              schema: 'Schema',
+              information: 'Basic activity information',
+              financial: 'Financial',
+              identifiers: 'Identification',
+              organisation: 'Basic organisation information',
+              participating: 'Participating organisations',
+              geo: 'Geopolitical information',
+              classifications: 'Classifications',
+              documents: 'Related documents',
+              performance: 'Performance',
+              iati: 'IATI file'
+            };
+            return categories[category];
+          }
           /**
            * Handle Http operation that failed.
            * Let the app continue.
@@ -4438,13 +4331,13 @@
         }, {
           key: "handleError",
           value: function handleError() {
-            var _this15 = this;
+            var _this13 = this;
 
             var operation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'operation';
             var result = arguments.length > 1 ? arguments[1] : undefined;
             return function (error) {
               // TODO: send the error to remote logging
-              _this15.logger.error(error); // console.error(error); // log to console instead
+              _this13.logger.error(error); // console.error(error); // log to console instead
               // TODO: better job of transforming error for user consumption
               // this.log(`${operation} failed: ${error.message}`);
               // Let the app keep running by returning an empty result.
@@ -4724,13 +4617,13 @@
         _createClass(MultiFeedbackComponent, [{
           key: "toggleCollapse",
           value: function toggleCollapse() {
-            var _this16 = this;
+            var _this14 = this;
 
             var _a;
 
             this.isCollapsed = !this.isCollapsed;
             (_a = this.groups) === null || _a === void 0 ? void 0 : _a.forEach(function (x) {
-              return x.isCollapsed = _this16.isCollapsed;
+              return x.isCollapsed = _this14.isCollapsed;
             });
           }
         }]);
