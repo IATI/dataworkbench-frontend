@@ -709,7 +709,7 @@ function MainComponent_div_10_div_9_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("feedbackData", ctx_r11.fileErrors)("title", "Activity file feedback")("item", "activity")("items", "activities");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activityData", ctx_r11.activityErrors)("title", "Feedback per activity")("item", "activity")("items", "activities")("dqfs", ctx_r11.data);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activityData", ctx_r11.activityErrors)("title", "Feedback per activity")("item", "activity")("items", "activities")("organisationInfo", ctx_r11.organisationInfo);
 } }
 function MainComponent_div_10_div_9_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
@@ -730,7 +730,7 @@ function MainComponent_div_10_div_10_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("feedbackData", ctx_r9.fileErrors)("title", "Organisation file feedback")("item", "organisation")("items", "organisations");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activityData", ctx_r9.activityErrors)("title", "Organisation feedback")("item", "organisation")("items", "organisations")("dqfs", ctx_r9.data);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("activityData", ctx_r9.activityErrors)("title", "Organisation feedback")("item", "organisation")("items", "organisations")("organisationInfo", ctx_r9.organisationInfo);
 } }
 function MainComponent_div_10_div_11_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
@@ -1146,7 +1146,7 @@ class MainComponent {
     }
 }
 MainComponent.ɵfac = function MainComponent_Factory(t) { return new (t || MainComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_data_quality_feedback_service__WEBPACK_IMPORTED_MODULE_1__["DataQualityFeedbackService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_validate_iati_shared_validated_iati_service__WEBPACK_IMPORTED_MODULE_2__["ValidatedIatiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_organisation_shared_organisation_service__WEBPACK_IMPORTED_MODULE_3__["OrganisationService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_logging_log_service__WEBPACK_IMPORTED_MODULE_4__["LogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_loader_loader_service__WEBPACK_IMPORTED_MODULE_6__["LoaderService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"])); };
-MainComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MainComponent, selectors: [["app-main"]], decls: 11, vars: 6, consts: [[1, "container-fluid"], ["class", "content-block", 4, "ngIf"], [1, "row", "alert", "alert-light"], [1, "col"], [3, "documentInfo", "organisationInfo", 4, "ngIf"], [3, "documentInfo", "validationReport", 4, "ngIf"], ["class", "alert alert-info", "role", "alert", 4, "ngIf"], ["class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "row", 4, "ngIf"], [1, "content-block"], [3, "routerLink"], [3, "documentInfo", "organisationInfo"], [3, "documentInfo", "validationReport"], ["role", "alert", 1, "alert", "alert-info"], [3, "backColor"], [1, "loading-text"], ["role", "alert", 1, "alert", "alert-warning"], [3, "click"], ["type", "button", 1, "btn", "btn-link"], ["routerLink", "\\", "type", "button", 1, "btn", "btn-link"], [1, "row"], [1, "col-md-4", "filters"], [3, "severities", "selectedChanged"], [3, "categories", "selectedChanged"], [1, "col-md-8", "results"], [4, "ngIf"], [3, "feedbackData", "title", "item", "items"], [3, "activityData", "title", "item", "items", "dqfs"], [3, "feedbackData", "title"]], template: function MainComponent_Template(rf, ctx) { if (rf & 1) {
+MainComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MainComponent, selectors: [["app-main"]], decls: 11, vars: 6, consts: [[1, "container-fluid"], ["class", "content-block", 4, "ngIf"], [1, "row", "alert", "alert-light"], [1, "col"], [3, "documentInfo", "organisationInfo", 4, "ngIf"], [3, "documentInfo", "validationReport", 4, "ngIf"], ["class", "alert alert-info", "role", "alert", 4, "ngIf"], ["class", "alert alert-warning", "role", "alert", 4, "ngIf"], ["class", "row", 4, "ngIf"], [1, "content-block"], [3, "routerLink"], [3, "documentInfo", "organisationInfo"], [3, "documentInfo", "validationReport"], ["role", "alert", 1, "alert", "alert-info"], [3, "backColor"], [1, "loading-text"], ["role", "alert", 1, "alert", "alert-warning"], [3, "click"], ["type", "button", 1, "btn", "btn-link"], ["routerLink", "\\", "type", "button", 1, "btn", "btn-link"], [1, "row"], [1, "col-md-4", "filters"], [3, "severities", "selectedChanged"], [3, "categories", "selectedChanged"], [1, "col-md-8", "results"], [4, "ngIf"], [3, "feedbackData", "title", "item", "items"], [3, "activityData", "title", "item", "items", "organisationInfo"], [3, "feedbackData", "title"]], template: function MainComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, MainComponent_div_1_Template, 3, 3, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -1447,6 +1447,7 @@ function FeedbackGroupComponent_app_feedback_item_22_Template(rf, ctx) { if (rf 
 class FeedbackGroupComponent {
     constructor(logger) {
         this.logger = logger;
+        this.organisationInfo = {};
         this.isCollapsed = false;
     }
     ngOnInit() {
@@ -1454,13 +1455,15 @@ class FeedbackGroupComponent {
     collapse() {
         this.isCollapsed = !this.isCollapsed;
     }
-    getLinkDportal(publisher, activity) {
-        if (this.dqfs && this.dqfs.filetype === 'iati-organisations') {
-            return `http://d-portal.org/ctrack.html?publisher=${encodeURIComponent(publisher)}`;
+    getLinkDportal(activity) {
+        if (this.items === 'organisations') {
+            return `http://d-portal.org/ctrack.html?publisher=${encodeURIComponent(activity)}`;
         }
-        else {
-            return `http://d-portal.org/ctrack.html?publisher=${encodeURIComponent(publisher)}#view=act&aid=${encodeURIComponent(activity)}`;
+        else if (this.organisationInfo.iati_id) {
+            // eslint-disable-next-line max-len
+            return `http://d-portal.org/ctrack.html?publisher=${encodeURIComponent(this.organisationInfo.iati_id)}#view=act&aid=${encodeURIComponent(activity)}`;
         }
+        return '';
     }
     getIssueCount(type) {
         let count = 0;
@@ -1542,7 +1545,7 @@ class FeedbackGroupComponent {
     }
 }
 FeedbackGroupComponent.ɵfac = function FeedbackGroupComponent_Factory(t) { return new (t || FeedbackGroupComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_logging_log_service__WEBPACK_IMPORTED_MODULE_1__["LogService"])); };
-FeedbackGroupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: FeedbackGroupComponent, selectors: [["app-feedback-group"]], inputs: { activity: "activity", item: "item", items: "items", dqfs: "dqfs" }, decls: 23, vars: 16, consts: [[1, "feedback-group"], [1, "feedback-heading", "row"], [1, "col", "title-col", 3, "click"], [1, "title-col__title-label"], [1, "feedback-group-title", "title", "d-inline"], [1, "d-inline", "float-right"], [1, "identifier-link"], ["target", "_blank", 3, "href", "title", "click"], ["class", "badge badge-critical", 4, "ngIf"], ["class", "badge badge-danger", 4, "ngIf"], ["class", "badge badge-warning", 4, "ngIf"], ["class", "badge badge-info", 4, "ngIf"], ["class", "badge badge-success", 4, "ngIf"], [1, "col-auto", "collapse-col", 3, "click"], ["type", "button", 1, "btn", "btn-outline-secondary", "collapser"], [4, "ngIf"], [1, "feedback-items", 3, "ngbCollapse"], [3, "feedback", 4, "ngFor", "ngForOf"], [1, "badge", "badge-critical"], [1, "badge", "badge-danger"], [1, "badge", "badge-warning"], [1, "badge", "badge-info"], [1, "badge", "badge-success"], ["src", "assets/icons/arrow_down_24.svg", "alt", "icon arrow down"], ["src", "assets/icons/arrow_up_24.svg", "alt", "icon arrow up"], [3, "feedback"]], template: function FeedbackGroupComponent_Template(rf, ctx) { if (rf & 1) {
+FeedbackGroupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: FeedbackGroupComponent, selectors: [["app-feedback-group"]], inputs: { activity: "activity", item: "item", items: "items", organisationInfo: "organisationInfo" }, decls: 23, vars: 16, consts: [[1, "feedback-group"], [1, "feedback-heading", "row"], [1, "col", "title-col", 3, "click"], [1, "title-col__title-label"], [1, "feedback-group-title", "title", "d-inline"], [1, "d-inline", "float-right"], [1, "identifier-link"], ["target", "_blank", 3, "href", "title", "click"], ["class", "badge badge-critical", 4, "ngIf"], ["class", "badge badge-danger", 4, "ngIf"], ["class", "badge badge-warning", 4, "ngIf"], ["class", "badge badge-info", 4, "ngIf"], ["class", "badge badge-success", 4, "ngIf"], [1, "col-auto", "collapse-col", 3, "click"], ["type", "button", 1, "btn", "btn-outline-secondary", "collapser"], [4, "ngIf"], [1, "feedback-items", 3, "ngbCollapse"], [3, "feedback", 4, "ngFor", "ngForOf"], [1, "badge", "badge-critical"], [1, "badge", "badge-danger"], [1, "badge", "badge-warning"], [1, "badge", "badge-info"], [1, "badge", "badge-success"], ["src", "assets/icons/arrow_down_24.svg", "alt", "icon arrow down"], ["src", "assets/icons/arrow_up_24.svg", "alt", "icon arrow up"], [3, "feedback"]], template: function FeedbackGroupComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -1586,7 +1589,7 @@ FeedbackGroupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.activity.title);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", ctx.getLinkDportal(ctx.activity.publisher, ctx.cleanIdentifier(ctx.activity.identifier)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", ctx.getLinkDportal(ctx.cleanIdentifier(ctx.activity.identifier)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("title", "Open this ", ctx.item, " in d-portal");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.cleanIdentifier(ctx.activity.identifier));
@@ -2325,7 +2328,7 @@ function MultiFeedbackComponent_div_6_app_feedback_group_1_Template(rf, ctx) { i
 } if (rf & 2) {
     const act_r4 = ctx.$implicit;
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("activity", act_r4)("item", ctx_r3.item)("items", ctx_r3.items)("dqfs", ctx_r3.dqfs);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("activity", act_r4)("item", ctx_r3.item)("items", ctx_r3.items)("organisationInfo", ctx_r3.organisationInfo);
 } }
 function MultiFeedbackComponent_div_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
@@ -2347,6 +2350,7 @@ class MultiFeedbackComponent {
         this.title = '';
         this.item = 'activity';
         this.items = 'activities';
+        this.organisationInfo = {};
         this.isCollapsed = false;
     }
     toggleCollapse() {
@@ -2361,7 +2365,7 @@ MultiFeedbackComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵd
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.groups = _t);
-    } }, inputs: { activityData: "activityData", title: "title", item: "item", items: "items", dqfs: "dqfs" }, decls: 9, vars: 4, consts: [[1, "feedback"], [1, "title", "feedback-title"], [1, "toggle-collapse"], ["type", "button", 1, "btn", "btn-link", 3, "click"], [4, "ngIf", "ngIfElse"], ["noActivityData", ""], [3, "activity", "item", "items", "dqfs", 4, "ngFor", "ngForOf"], [3, "activity", "item", "items", "dqfs"]], template: function MultiFeedbackComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { activityData: "activityData", title: "title", item: "item", items: "items", organisationInfo: "organisationInfo" }, decls: 9, vars: 4, consts: [[1, "feedback"], [1, "title", "feedback-title"], [1, "toggle-collapse"], ["type", "button", 1, "btn", "btn-link", 3, "click"], [4, "ngIf", "ngIfElse"], ["noActivityData", ""], [3, "activity", "item", "items", "organisationInfo", 4, "ngFor", "ngForOf"], [3, "activity", "item", "items", "organisationInfo"]], template: function MultiFeedbackComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "h5", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
