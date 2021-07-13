@@ -81,7 +81,7 @@ OrganisationsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefi
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes),
             _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"],
         ], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵsetNgModuleScope"](OrganisationsModule, { declarations: [_organisations_organisations_component__WEBPACK_IMPORTED_MODULE_3__["OrganisationsComponent"],
         _organisations_list_organisations_list_component__WEBPACK_IMPORTED_MODULE_4__["OrganisationsListComponent"],

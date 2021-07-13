@@ -1964,7 +1964,6 @@ DataQualityFeedbackModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_24__["�
             angular_gtag__WEBPACK_IMPORTED_MODULE_4__["GtagModule"]
         ], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_24__["ɵɵsetNgModuleScope"](DataQualityFeedbackModule, { declarations: [_main_main_component__WEBPACK_IMPORTED_MODULE_7__["MainComponent"],
-        // AboutComponent,
         _filter_severity_filter_severity_component__WEBPACK_IMPORTED_MODULE_8__["FilterSeverityComponent"],
         _filter_source_filter_source_component__WEBPACK_IMPORTED_MODULE_9__["FilterSourceComponent"],
         _filter_type_filter_type_component__WEBPACK_IMPORTED_MODULE_10__["FilterTypeComponent"],
